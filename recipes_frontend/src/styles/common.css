@@ -1,0 +1,332 @@
+:root {
+  /* Color tokens from design system */
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-121212: #121212;
+  --color-129575: #129575;
+  --color-d9d9d9: #d9d9d9;
+  --color-ff9c00: #ff9c00;
+  --color-ffc107: #ffc107;
+  --color-ff3d00: #ff3d00;
+  --color-4caf50: #4caf50;
+  --color-1976d2: #1976d2;
+  --color-303030: #303030;
+  --color-484848: #484848;
+
+  /* Typography tokens mapped to CSS custom properties (sizes/weights/line-heights only) */
+  --typo-60-size: 30px;  /* Poppins 30/600/45 */
+  --typo-60-weight: 600;
+  --typo-60-line: 45px;
+  --typo-61-size: 20px;  /* Poppins 20/400/30 */
+  --typo-61-weight: 400;
+  --typo-61-line: 30px;
+
+  --typo-62-size: 11px;  /* Poppins 11/400/16.5 */
+  --typo-62-weight: 400;
+  --typo-62-line: 16.5px;
+
+  --typo-63-size: 11px;  /* Poppins 11/500/16.5 */
+  --typo-63-weight: 500;
+  --typo-63-line: 16.5px;
+
+  --typo-64-size: 11px;  /* Poppins 11/500/16.5 */
+  --typo-64-weight: 500;
+  --typo-64-line: 16.5px;
+
+  --typo-65-size: 11px;  /* Poppins 11/400/16.5 */
+  --typo-65-weight: 400;
+  --typo-65-line: 16.5px;
+
+  --typo-66-size: 14px;  /* Poppins 14/400/21 */
+  --typo-66-weight: 400;
+  --typo-66-line: 21px;
+
+  --typo-67-size: 15px;  /* SF Pro 15/500/17.9 */
+  --typo-67-weight: 500;
+  --typo-67-line: 17.9px;
+
+  --typo-58-size: 16px;  /* Poppins 16/600/24 */
+  --typo-58-weight: 600;
+  --typo-58-line: 24px;
+
+  /* Spacing/border radius tokens used in screen */
+  --radius-10: 10px;
+  --radius-100: 100px;
+
+  /* Shadows translated from design system (approx) */
+  --shadow-0: 0 0 5px 3px #69696933;
+  --shadow-3: 0 0 20px 0 #0000001a;
+
+  /* Page base */
+  --page-bg: var(--color-ffffff);
+  --page-text: var(--color-000000);
+}
+
+/* Reset and base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--page-bg);
+  color: var(--page-text);
+  font-family: Poppins, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+}
+
+/* Utilities */
+.visually-hidden {
+  position: absolute !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 1px !important;
+  height: 1px !important;
+  overflow: hidden !important;
+}
+
+/* Button base */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+/* Input base */
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* slightly increased label-to-field spacing */
+}
+
+.input-label {
+  font-size: var(--typo-66-size);
+  font-weight: var(--typo-66-weight);
+  line-height: var(--typo-66-line);
+  color: var(--color-121212);
+}
+
+.input-field {
+  height: 55px;
+  border: 1.5px solid var(--color-d9d9d9);
+  border-radius: var(--radius-10);
+  padding: 0 20px;
+  font-size: var(--typo-65-size);
+  font-weight: var(--typo-65-weight);
+  line-height: var(--typo-65-line);
+  color: var(--color-121212);
+}
+
+.input-field::placeholder {
+  color: var(--color-d9d9d9);
+}
+
+/* Social icon square button with shadow and radius from style_126 */
+.icon-square {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-10);
+  background: var(--color-ffffff);
+  box-shadow: var(--shadow-0);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Divider line with center label */
+.divider {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.divider .line {
+  height: 1px;
+  background: var(--color-d9d9d9);
+}
+
+.divider .label {
+  font-size: var(--typo-64-size);
+  font-weight: var(--typo-64-weight);
+  line-height: var(--typo-64-line);
+  color: var(--color-d9d9d9);
+}
+
+/* Primary big button */
+.primary-btn {
+  width: 100%;
+  height: 60px;
+  background: var(--color-129575);
+  border-radius: var(--radius-10);
+  color: var(--color-ffffff);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.primary-btn .label {
+  font-size: var(--typo-58-size);
+  font-weight: var(--typo-58-weight);
+  line-height: var(--typo-58-line);
+  color: var(--color-ffffff);
+}
+
+/* Status bar placeholders */
+.status-bar {
+  height: 44px;
+  width: 100%;
+}
+
+.home-indicator {
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home-indicator .pill {
+  width: 135px;
+  height: 5px;
+  background: var(--color-121212);
+  border-radius: var(--radius-100);
+}
+
+/* Layout helpers for a 375 x 812 artboard centered */
+.artboard {
+  width: 375px;
+  min-height: 812px;
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  border-radius: 30px; /* style_10 */
+  box-shadow: var(--shadow-3);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Make page fill viewport height so bottom area can stick to bottom */
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: var(--page-bg);
+}
+
+/* Content wrapper */
+.screen-content {
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Group that holds the main content so the bottom area can be pushed to the bottom */
+.content-flex {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 auto; /* take remaining vertical space */
+}
+
+/* A bottom area that stays at the bottom inside the artboard */
+.bottom-area {
+  margin-top: auto;
+  padding: 16px 32px 20px;
+}
+
+/* Title group */
+.title-group .hello {
+  font-size: var(--typo-60-size);
+  font-weight: var(--typo-60-weight);
+  line-height: var(--typo-60-line);
+  color: var(--color-000000);
+  margin: 0;
+}
+.title-group .welcome {
+  font-size: var(--typo-61-size);
+  font-weight: var(--typo-61-weight);
+  line-height: var(--typo-61-line);
+  color: var(--color-121212);
+  margin: 0;
+}
+
+/* Forgot password */
+.forgot-password {
+  margin-left: 10px;
+  font-size: var(--typo-62-size);
+  font-weight: var(--typo-62-weight);
+  line-height: var(--typo-62-line);
+  color: var(--color-ff9c00);
+  text-decoration: none;
+  align-self: flex-start;
+  background: transparent;
+}
+
+/* Social row */
+.social-row {
+  display: flex;
+  gap: 25px;
+  align-self: center;
+}
+
+/* Sign up hint */
+.sign-up-hint {
+  text-align: center;
+  font-size: var(--typo-63-size);
+  font-weight: var(--typo-63-weight);
+  line-height: var(--typo-63-line);
+  color: var(--color-000000);
+  margin-top: 8px;
+}
+.sign-up-hint a {
+  color: var(--color-129575);
+  text-decoration: none;
+}
+
+/* Arrow icon inside button (20x20) */
+.icon-arrow-right {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+/* Google "G" icon container */
+.icon-google {
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure the inline SVG scales crisply within the 24px box */
+.icon-google .google-g {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+/* Facebook icon (approx solid blue f) */
+.icon-facebook {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  display: inline-block;
+  background: #035b81; /* style_26 */
+  border-radius: 4px;
+}
+.icon-facebook::after {
+  content: "f";
+  color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-52%);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}

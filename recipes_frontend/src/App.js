@@ -1,48 +1,54 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import './App.css';
+import './styles/common.css';
+import './styles/sign-in-11-235.css';
+import SignInScreen from './screens/SignInScreen';
+
+// Simple placeholder pages for future extension
+function Dashboard() {
+  return (
+    <div className="page" style={{ padding: 24 }}>
+      <div className="artboard" aria-label="Dashboard">
+        <div className="screen-content">
+          <h1>Recipes Dashboard</h1>
+          <p>Placeholder screen. After login, navigate here.</p>
+          <Link className="btn primary-btn" to="/">
+            <span className="label">Back to Sign In</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+function AddRecipe() {
+  return (
+    <div className="page" style={{ padding: 24 }}>
+      <div className="artboard" aria-label="Add Recipe">
+        <div className="screen-content">
+          <h1>Add Recipe</h1>
+          <p>Placeholder for add recipe form.</p>
+          <Link className="btn primary-btn" to="/dashboard">
+            <span className="label">Go to Dashboard</span>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 // PUBLIC_INTERFACE
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  // Effect to apply theme to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
+  /** App entry: Router with Sign In as landing screen */
   return (
-    <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignInScreen />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/recipes/add" element={<AddRecipe />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

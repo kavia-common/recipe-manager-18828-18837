@@ -1,0 +1,51 @@
+@import url("./common.css");
+
+/* Screen-specific tweaks to better match Figma vertical spacing */
+.sign-in-screen .screen-content {
+  padding-top: 52px; /* increased space below status bar */
+}
+
+/* Title group spacing */
+.sign-in-screen .title-group {
+  margin-top: 12px;
+  margin-bottom: 12px; /* more balanced */
+}
+
+/* Inputs stack spacing based on figma block heights, slightly larger gaps */
+.sign-in-screen .form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* increased from 16 */
+}
+
+/* Slightly increased field size */
+.sign-in-screen .input-field {
+  height: 58px;
+  padding: 0 22px;
+}
+
+/* Divider spacing before social auth */
+.sign-in-screen .auth-divider {
+  margin: 12px 0 10px; /* increased */
+}
+
+/* Primary action spacing */
+.sign-in-screen .actions {
+  margin-top: 12px; /* increased */
+}
+
+/* Social icons row spacing */
+.sign-in-screen .social-row {
+  gap: 28px; /* slightly larger for breathing room */
+  margin-top: 6px;
+}
+
+/* Bottom area wrapper ensures content above expands and this stays at bottom */
+.sign-in-screen .bottom-area {
+  padding-top: 8px;
+}
+
+/* Home indicator margins handled by parent for consistent anchoring */
+.sign-in-screen .home-indicator {
+  margin: 0;
+}
