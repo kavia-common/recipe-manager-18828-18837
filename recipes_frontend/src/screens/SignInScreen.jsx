@@ -31,7 +31,7 @@ function SignInScreen() {
     // Keep this console for dev visibility
     // eslint-disable-next-line no-console
     console.log('Sign In submit', form);
-    navigate('/dashboard');
+    navigate('/home');
   };
 
   const onForgot = (e) => {

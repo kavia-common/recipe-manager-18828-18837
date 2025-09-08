@@ -4,6 +4,7 @@ import './App.css';
 import './styles/common.css';
 import './styles/sign-in-11-235.css';
 import SignInScreen from './screens/SignInScreen';
+import HomeScreen from './screens/HomeScreen';
 
 // Simple placeholder pages for future extension
 function Dashboard() {
@@ -28,8 +29,8 @@ function AddRecipe() {
         <div className="screen-content">
           <h1>Add Recipe</h1>
           <p>Placeholder for add recipe form.</p>
-          <Link className="btn primary-btn" to="/dashboard">
-            <span className="label">Go to Dashboard</span>
+          <Link className="btn primary-btn" to="/home">
+            <span className="label">Go to Home</span>
           </Link>
         </div>
       </div>
@@ -44,6 +45,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<SignInScreen />} />
+        <Route path="/home" element={<HomeScreen />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/recipes/add" element={<AddRecipe />} />
         <Route path="*" element={<Navigate to="/" replace />} />
